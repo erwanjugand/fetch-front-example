@@ -1,11 +1,11 @@
 <template>
   <v-app>
     <div class="column">
-      <Posts ref="posts" class="posts" />
+      <Posts class="posts" />
     </div>
     <div class="column">
       <Stats class="stats" />
-      <Logs ref="logs" class="logs" />
+      <Logs class="logs" />
     </div>
   </v-app>
 </template>

@@ -1,5 +1,5 @@
 import { getAccessorType, mutationTree, actionTree } from 'typed-vuex'
-import { Post, User, CustomResponse } from '~/models'
+import type { Post, User, CustomResponse } from '~/models'
 
 export const state = () => ({
   users: {

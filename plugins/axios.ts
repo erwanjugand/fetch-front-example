@@ -1,5 +1,5 @@
-import { Plugin } from '@nuxt/types'
-import { CustomResponse, User } from '~/models'
+import type { Plugin } from '@nuxt/types'
+import type { CustomResponse, User } from '~/models'
 import { encodeUrl } from '~/utils/url'
 
 const axiosPlugin: Plugin = function (ctx) {
@@ -14,8 +14,8 @@ const axiosPlugin: Plugin = function (ctx) {
         // @ts-ignore-next-line
         const localUser = (ctx.$accessor.users.items as User[]).find(u => u.id === userData.id)
 
-        if (localUser && localUser.updatedAt >= userData.updatedAt) {
-          ctx.store.commit('setLog', `User n°${userData.id} already in local & updated`)
+        if (localUser && new Date(localUser.updatedAt) >= new Date(userData.updatedAt)) {
+          ctx.store.commit('setLog', `User n°${userData.id} already in localStorage & updated`)
         } else {
           userIdsToFetch.push(userData.id)
           ctx.store.commit('setLog', `User n°${userData.id} not exist OR not up to date`)

@@ -7,7 +7,7 @@
 
     <v-card-actions>
       <v-btn @click="onClick">
-        Clear local storage
+        Clear localStorage
       </v-btn>
     </v-card-actions>
   </v-card>
